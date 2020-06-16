@@ -16,7 +16,7 @@ def printBoard(board):
     print('-+-+-')
     print(board['1'] + '|' + board['2'] + '|' + board['3'])
 
-# Now we'll write the main function which has all the gameplay functionality.
+#Main function which has all gameplay functionality
 def game():
 
     turn = 'X'
@@ -36,7 +36,7 @@ def game():
             print("That place is already filled.\nMove to which place?")
             continue
 
-        # Now we will check if player X or O has won,for every move after 5 moves. 
+        #Win/Lose
         if count >= 5:
             if Board['7'] == Board['8'] == Board['9'] != ' ': # across the top
                 printBoard(Board)
@@ -79,18 +79,18 @@ def game():
                 print(" **** " +turn + " won. ****")
                 break 
 
-        # If neither X nor O wins and the board is full, we'll declare the result as 'tie'.
+        #Tie
         if count == 9:
             print("\nGame Over.\n")                
             print("It's a Tie!!")
 
-        # Now we have to change the player after every move.
+        #Change player every move
         if turn =='X':
             turn = 'O'
         else:
             turn = 'X'        
     
-    # Now we will ask if player wants to restart the game or not.
+    #Restart game or not
     restart = input("Do want to play Again?(y/n)")
     if restart == "y" or restart == "Y":  
         for key in board_keys:
